@@ -1,0 +1,1 @@
+# jojonomics-techinical-test-go
