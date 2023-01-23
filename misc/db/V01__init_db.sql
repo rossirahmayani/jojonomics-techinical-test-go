@@ -36,8 +36,9 @@ CREATE TABLE public.tbl_transaksi (
     create_date timestamp with time zone NULL,
     update_date timestamp with time zone NULL,
     harga_topup numeric NOT NULL,
+    transaction_amount numeric NOT NULL,
 );
 
 ALTER TABLE public.tbl_transaksi ADD CONSTRAINT tbl_transaksi_id_pk PRIMARY KEY (id);
-ALTER TABLE public.tbl_transaksi ADD CONSTRAINT tbl_transaksi_rek_id_fk FOREIGN KEY (id) REFERENCES public.tbl_rekening(id);
+ALTER TABLE public.tbl_transaksi ADD CONSTRAINT tbl_transaksi_rekening_id_fk FOREIGN KEY (rekening_id) REFERENCES public.tbl_rekening(id);
 

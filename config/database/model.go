@@ -1,14 +1,13 @@
 package database
 
 import (
-	"math/big"
 	"time"
 )
 
 type Rekening struct {
 	Id int `db:"id"`
 	Norek string `db:"norek"`
-	Saldo int `db:"saldo"`
+	Saldo float32 `db:"saldo"`
 	CreateDate time.Time `db:"create_date"`
 	UpdateDate time.Time `db:"update_date"`
 }
@@ -29,9 +28,11 @@ type Transaksi struct {
 	RekeningId int `db:"rekening_id"`
 	HargaTopup int `db:"harga_topup"`
 	HargaBuyback int `db:"harga_buyback"`
-	Gram big.Float `db:"gram"`
-	Type string `db:"type"`
-	SaldoAkhir big.Float `db:"saldo_akhir"`
+	Gram float32 `db:"gram"`
+	TransactionType string `db:"type"`
+	TransactionAmount int `db:"transaction_amount"`
+	ReffId string `db:"reff_id"`
+	SaldoAkhir float32 `db:"saldo_akhir"`
 	TransactionDate time.Time `db:"transaction_date"`
 	CreateDate time.Time `db:"create_date"`
 	UpdateDate time.Time `db:"update_date"`

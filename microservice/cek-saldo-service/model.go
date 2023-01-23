@@ -1,6 +1,5 @@
 package cek_saldo_service
 
-
 type CekSaldoRequest struct {
 	NoRek string `json:"norek"`
 }
@@ -14,5 +13,5 @@ type CekSaldoResponse struct {
 
 type CekSaldoData struct {
 	NoRek string `json:"norek"`
-	Saldo int `json:"saldo"`
+	Saldo float32 `json:"saldo"`
 }
