@@ -2,9 +2,9 @@
 CREATE TABLE public.tbl_rekening (
     id serial NOT NULL,
     norek varchar NOT NULL,
-    saldo numeric NOT NULL DEFAULT 0,
     create_date timestamp with time zone NULL,
-    update_date timestamp with time zone NULL
+    update_date timestamp with time zone NULL,
+    saldo numeric NOT NULL DEFAULT 0
 );
 
 ALTER TABLE public.tbl_rekening ADD CONSTRAINT tbl_rekening_id_pk PRIMARY KEY (id);
