@@ -25,13 +25,6 @@ func cek(request *CekMutasiRequest) *CekMutasiResponse{
 	dbCon := db.Connect()
 	defer dbCon.Close()
 	var mutations []CekMutasiData
-	//var rekening db.Rekening
-	//err := dbCon.QueryRow(`SELECT * FROM tbl_rekening WHERE norek = $1`, request.NoRek).Scan(
-	//	&rekening.Id, &rekening.Norek, &rekening.CreateDate, &rekening.UpdateDate, &rekening.Saldo)
-	//
-	//if err != nil {
-	//	return generateErrorResponse(err)
-	//}
 
 	rows, err := dbCon.Query(`SELECT tbl_transaksi.* from tbl_transaksi join tbl_rekening on tbl_rekening.id = tbl_transaksi.rekening_id 
 					where tbl_rekening.norek = $1 and tbl_transaksi.transaction_date between $2 and $3 
