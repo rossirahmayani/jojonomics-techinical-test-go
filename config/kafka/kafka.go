@@ -28,7 +28,7 @@ func ConnConsumer() *kafka.Consumer{
 
 	c, err := kafka.NewConsumer(&kafka.ConfigMap{
 		"bootstrap.servers": kafkaServer,
-		"group.id":          "group",
+		"group.id":          "groupJojo",
 		"auto.offset.reset": "earliest",
 	})
 
@@ -37,5 +37,4 @@ func ConnConsumer() *kafka.Consumer{
 	}
 
 	return c
-
 }
