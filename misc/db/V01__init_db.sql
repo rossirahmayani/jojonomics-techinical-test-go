@@ -27,14 +27,15 @@ ALTER TABLE public.tbl_harga ADD CONSTRAINT tbl_harga_id_pk PRIMARY KEY (id);
 CREATE TABLE public.tbl_transaksi (
     id bigserial NOT NULL,
     rekening_id bigint NOT NULL,
-    harga numeric NOT NULL,
+    harga_buyback numeric NOT NULL,
     gram numeric NOT NULL,
     "type" varchar NOT NULL,
     reff_id varchar NOT NULL,
     saldo_akhir numeric NOT NULL,
     transaction_date timestamp with time zone NOT NULL,
     create_date timestamp with time zone NULL,
-    update_date timestamp with time zone NULL
+    update_date timestamp with time zone NULL,
+    harga_topup numeric NOT NULL,
 );
 
 ALTER TABLE public.tbl_transaksi ADD CONSTRAINT tbl_transaksi_id_pk PRIMARY KEY (id);

@@ -27,7 +27,8 @@ type Harga struct {
 type Transaksi struct {
 	Id int `db:"id"`
 	RekeningId int `db:"rekening_id"`
-	Harga int `db:"harga"`
+	HargaTopup int `db:"harga_topup"`
+	HargaBuyback int `db:"harga_buyback"`
 	Gram big.Float `db:"gram"`
 	Type string `db:"type"`
 	SaldoAkhir big.Float `db:"saldo_akhir"`
