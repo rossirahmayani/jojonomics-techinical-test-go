@@ -19,6 +19,7 @@ func ConnProducer() *kafka.Producer{
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	return p
 }
 
